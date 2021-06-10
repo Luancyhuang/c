@@ -1,0 +1,3 @@
+﻿  test.c
+C:\Users\huangxinwu\source\repos\code -6.10\code -6.10\test.c(10): warning C4778: “scanf”: 格式字符串“%”未终止
+  code -6.10.vcxproj -> C:\Users\huangxinwu\source\repos\code -6.10\Debug\code -6.10.exe
