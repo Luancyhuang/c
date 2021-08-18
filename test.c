@@ -1,42 +1,38 @@
-//写一个函数，判断一个字符串是否为另外一个字符串旋转之后的字符串。
+//int strncmp(const char*string1,const char*string2,size_t count)
 #include <stdio.h>
 #include <string.h>
-int is_left_move(char *arr1,char *arr2)
-{
-  //1.arr1后面追加1个自己
-  //strcat 追加字符串
-  //strcat
-  int len1 = strlen(arr1);
-  int len2 = strlen(arr2);
-  if(len1 != len2)
-    return 0;
-  strncat(arr1,arr1,len1);
-  
-  //strstr -找字串
-  //strncat
-  //2.判断arr2指向的字符串是否时arr1指向的子串
-  char *ret = strstr(arr1,arr2); 
-  if(ret == NULL)
-  {
-    return 0;
-  }
-  else
-  {
-    return 1;
-  }
-}
+//int my_strncmp(const char *str1,const char *str2,int k)
+//{
+//  
+//
+//}
+//int main()
+//{
+//  //strncmp -字符串比较
+//  const char *p1 = "abcdef";
+//  const char *p2 = "abcdqwr";
+//  int ret = my_strncmp(p1,p2,);
+//  printf("%d\n",ret);
+//  return 0;
+//}
 int main()
 {
-  char arr1[30] = "abcdef";
-  char arr2[] = "cde";
-  int ret = is_left_move(arr1,arr2);
-  if(ret == 1)
+ // strstr
+ // char *strstr(const char *haystack, const char *needle);  
+  char *p1 = "abcdef";
+  char *p2 = "def";
+  char *ret =  strstr(p1,p2);
+  if(ret == NULL)
   {
-    printf("YES\n");
+    printf("子串不存在\n");
   }
   else
   {
-    printf("NO\n");
+    printf("%s\n",ret);
   }
   return 0;
 }
+
+
+
+
