@@ -1,38 +1,34 @@
-//int strncmp(const char*string1,const char*string2,size_t count)
 #include <stdio.h>
 #include <string.h>
-//int my_strncmp(const char *str1,const char *str2,int k)
-//{
-//  
-//
-//}
-//int main()
-//{
-//  //strncmp -字符串比较
-//  const char *p1 = "abcdef";
-//  const char *p2 = "abcdqwr";
-//  int ret = my_strncmp(p1,p2,);
-//  printf("%d\n",ret);
-//  return 0;
-//}
+#include <assert.h>
+struct s
+{
+   char name[20];
+   int age;
+};
+void *my_memcpy(void *dest,const void *src,size_t num)
+{
+   assert(dest && src);
+   char *ret = dest;
+   while(num--)
+   {
+     *(char*)dest = *(char*)src;
+     (char*)++dest;
+     (char*)++src;
+   }
+}
 int main()
 {
- // strstr
- // char *strstr(const char *haystack, const char *needle);  
-  char *p1 = "abcdef";
-  char *p2 = "def";
-  char *ret =  strstr(p1,p2);
-  if(ret == NULL)
+  int arr1[] = {1,2,3,4,5};
+  int arr2[5] = {0};
+  int i = 0;
+  struct s arr3[] = {{"张三",20},{"李四",19}};
+  struct s arr4[3] = {0};
+  my_memcpy(arr4,arr3,sizeof(arr3));
+  my_memcpy(arr2,arr1,sizeof(arr1));
+  for(i=0;i<5;i++)
   {
-    printf("子串不存在\n");
-  }
-  else
-  {
-    printf("%s\n",ret);
+   printf("%d ",arr2[i]);
   }
   return 0;
 }
-
-
-
-
