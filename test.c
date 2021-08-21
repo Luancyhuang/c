@@ -1,34 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include <assert.h>
-struct s
-{
-   char name[20];
-   int age;
-};
-void *my_memcpy(void *dest,const void *src,size_t num)
-{
-   assert(dest && src);
-   char *ret = dest;
-   while(num--)
-   {
-     *(char*)dest = *(char*)src;
-     (char*)++dest;
-     (char*)++src;
-   }
-}
+#include <errno.h>
 int main()
 {
-  int arr1[] = {1,2,3,4,5};
-  int arr2[5] = {0};
-  int i = 0;
-  struct s arr3[] = {{"张三",20},{"李四",19}};
-  struct s arr4[3] = {0};
-  my_memcpy(arr4,arr3,sizeof(arr3));
-  my_memcpy(arr2,arr1,sizeof(arr1));
-  for(i=0;i<5;i++)
+  int *p = (int*)calloc(10,sizeof(int));
+  if(p == NULL)
   {
-   printf("%d ",arr2[i]);
+    printf("%s\n",strerror(errno));
   }
+  else 
+  {
+    int i = 0;
+    for(i=0;i<10;i++)
+    {
+      printf("%d ",*(p+i));
+    }
+  }
+  free(p);
+  p = NULL;
   return 0;
 }
