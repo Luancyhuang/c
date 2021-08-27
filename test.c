@@ -1,23 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
+
 int main()
 {
-  int *p = (int*)calloc(10,sizeof(int));
-  if(p == NULL)
+  int arr[10] = {0};
+  int i = 0;
+  FILE *pf = fopen("log.txt","w");
+  for(i=0;i<10;i++)
   {
-    printf("%s\n",strerror(errno));
+    arr[i] = i;
+    fprintf(pf,"file:%s line:%d date:%s time:%s i:%d", __FILE__,__LINE__,__DATE__             ,__TIME__);
   }
-  else 
+  fclose(pf);
+  pf = NULL;  
+  for(i=0;i<10;i++)
   {
-    int i = 0;
-    for(i=0;i<10;i++)
-    {
-      printf("%d ",*(p+i));
-    }
+    printf("%d ",arr[i]);
   }
-  free(p);
-  p = NULL;
   return 0;
 }
