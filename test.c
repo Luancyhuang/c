@@ -1,20 +1,21 @@
 #include <stdio.h>
-
+// 求一年中某一个月有多少天？
 int main()
 {
-  int arr[10] = {0};
-  int i = 0;
-  FILE *pf = fopen("log.txt","w");
-  for(i=0;i<10;i++)
+  int year = 0;
+  int month = 0;
+  int days[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+  while(scanf("%d %d",&year,&month)!=EOF) 
   {
-    arr[i] = i;
-    fprintf(pf,"file:%s line:%d date:%s time:%s i:%d", __FILE__,__LINE__,__DATE__             ,__TIME__);
-  }
-  fclose(pf);
-  pf = NULL;  
-  for(i=0;i<10;i++)
-  {
-    printf("%d ",arr[i]);
+    int day = days[month-1];
+    if((year%4 == 0 && year%100 != 0)||(year%400 == 0))
+    {
+      if(month == 2)
+      {
+        day++;
+      }
+    }
+    printf("day = %d\n",day);   
   }
   return 0;
 }
