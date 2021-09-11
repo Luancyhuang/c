@@ -1,21 +1,20 @@
 #include <stdio.h>
-// 求一年中某一个月有多少天？
+#include <ctype.h>
+//输入一个字符，判断是否为字母
 int main()
 {
-  int year = 0;
-  int month = 0;
-  int days[] = {31,28,31,30,31,30,31,31,30,31,30,31};
-  while(scanf("%d %d",&year,&month)!=EOF) 
+  int ch = 0;
+  while((ch=getchar()) != EOF)
   {
-    int day = days[month-1];
-    if((year%4 == 0 && year%100 != 0)||(year%400 == 0))
+    if(isalpha(ch))
     {
-      if(month == 2)
-      {
-        day++;
-      }
+      printf("yes\n");
     }
-    printf("day = %d\n",day);   
+    else
+    {
+      printf("no\n");
+    }
+    getchar();
   }
   return 0;
 }
