@@ -1,15 +1,57 @@
 #include <stdio.h>
-//输入一个人的出生日期（包括年月日），将该生日中的年、月、日分别输出。
+#include <math.h>
+//int main()
+//{
+//  int ret = pow(2,6);
+//  printf("%d\n",ret);
+//  return 0;
+//}
+//输入3科成绩，然后把3科成绩输出，成绩为整数形式
+//输入一行，3科成绩，用空格分隔，范围（0-100）
+//输出一行，把3科成绩显示出来
+//
+//
+//int main()
+//{
+//  int score[3] = {0};
+//  int i = 0;
+//  for(i=0;i<3;i++)
+//  {
+//    scanf("%d",&score[i]);
+//  }
+//  printf("score1=%d,score2=%d,score3=%d\n",score[0],score[1],score[2]);
+//  return 0;
+//}
+//变种水仙花数(五位数）
 int main()
 {
-  int year = 0;
-  int month = 0;
-  int date = 0;
-  //按照格式输入
-  scanf("%4d%2d%2d",&year,&month,&date);
-  //按照格式输出
-  printf("year=%4d\n",year);
-  printf("month=%02d\n",month);
-  printf("date=%02d\n",date);
+  int i = 0;
+  for(i=10000;i<=99999;i++)
+  {
+    //判断i是否lily number
+    int j = 0;
+    int sum = 0;
+    for(j=10;j<=10000;j*=10)
+    {
+      sum +=(i/j)*(i%j);
+    }
+    if(sum == i)
+    {
+      printf("%d ",i);
+    }
+  }
   return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
