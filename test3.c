@@ -1,16 +1,17 @@
 #include <stdio.h>
-//求数字对应的ascii码
+//给定一个球体的半径，计算其体积。
+//其中体积公式为v = 4/3πr^3
+//其中π=3.1415926
 int main()
 {
-  //arr 是数组，数组是用下标来访问，下标是从0开始的。
-  char arr[] = {73,32,99,97,110,32,100,111,32,105,116,33};
-  int i = 0;
-  //求数组元素个数
-  int sz = sizeof(arr)/sizeof(arr[0]);
-  for(i=0;i<sz;i++)
-  {
-    printf("%c ",arr[i]);
-  }
-  printf("\n");
+  //1.输入
+  double r = 0.0;//定义半径
+  scanf("%lf",&r);
+  double v = 0.0;//定义体积
+  double pi = 3.1415926;
+  //2.计算
+  v = 4.0/3*pi*r*r*r;
+  //3.输出
+  printf("%.3lf\n",v);
   return 0;
 }
