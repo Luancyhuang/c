@@ -1,11 +1,31 @@
 #include <stdio.h>
-//BMI体质健康指数
+
+//int main()
+//{
+//  int a = 0;
+//  int b = 0;
+//  //输入
+//  scanf("%d %d",&a,&b);
+//  //计算
+//  int sum = ((a+b)%100)%100;
+//  printf("%d\n",sum);
+//  return 0;
+//}
+
+
+//给定一个浮点数，要求得到该浮点数的各位数
 int main()
 {
-  int weight = 0;
-  int high = 0;
-  scanf("%d %d",&weight,&high);
-  double BMI = weight/((high/100.0)*(high/100.0));
-  printf("%.2lf\n",BMI);
+  double d = 0.0;
+  scanf("%lf",&d);
+  int n = (int) d;
+  printf("%d\n",n%10);
   return 0;
 }
+
+
+
+
+
+
+
