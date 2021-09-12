@@ -1,28 +1,16 @@
 #include <stdio.h>
-//字符金字塔
+#include <math.h>
+//计算三角形的周长和面积
 int main()
 {
-  //输入一个字符
-  char ch = 0;
-  ch = getchar();
-  //输出金字塔
-  int i = 0;
-  //每循环一次，打印一行
-  //每一行由两部分组成，一是空格，二是字符
-  for (i=0;i<5;i++)
-  {
-    //空格
-    int j = 0;
-    for(j=0;j<4-i;j++)
-    {
-      printf(" ");
-    }
-    //字符
-    for(j=0;j<=i;j++)
-    {
-      printf("%c ",ch);
-    }
-    printf("\n");
-  }
+  double a = 0.0;
+  double b = 0.0;
+  double c = 0.0;
+  scanf("%lf %lf %lf",&a,&b,&c);
+  double girth = a + b + c;
+  double p = girth/2;
+  //海伦公式计算三角形的面积
+  double area = sqrt(p*(p-a)*(p-b)*(p-c));
+  printf("%.2lf %.2lf\n",girth,area);
   return 0;
 }
