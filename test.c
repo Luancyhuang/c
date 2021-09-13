@@ -1,14 +1,17 @@
 #include <stdio.h>
-//不使用累计乘积的基础上，通过移位运算(<<) 实现2的n次方的计算
-//多组输入，每一行输入整数n(0 <= n < 31)
-//针对每组输入输出对应的2的n次方的结果
-
+//给定秒数seconds（0<seconds<100,000,000)，把秒转换成小时、分钟和秒。
+//3661 
+//1 1 1
 int main()
 {
-  int n = 0;
-  while(scanf("%d",&n) != EOF)
-  {
-    printf("%d\n",1<<n);
-  }
+  int seconds = 0;
+  int h = 0;
+  int m = 0;
+  int s = 0;
+  scanf("%d",&seconds);
+  h = seconds/60/60;
+  m = seconds/60%60;
+  s = seconds%60;
+  printf("h = %d,m = %d,s = %d\n",h,m,s);
   return 0;
 }
