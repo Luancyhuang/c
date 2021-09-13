@@ -1,57 +1,32 @@
 #include <stdio.h>
-#include <math.h>
-//int main()
-//{
-//  int ret = pow(2,6);
-//  printf("%d\n",ret);
-//  return 0;
-//}
-//输入3科成绩，然后把3科成绩输出，成绩为整数形式
-//输入一行，3科成绩，用空格分隔，范围（0-100）
-//输出一行，把3科成绩显示出来
-//
-//
-//int main()
-//{
-//  int score[3] = {0};
-//  int i = 0;
-//  for(i=0;i<3;i++)
-//  {
-//    scanf("%d",&score[i]);
-//  }
-//  printf("score1=%d,score2=%d,score3=%d\n",score[0],score[1],score[2]);
-//  return 0;
-//}
-//变种水仙花数(五位数）
+//期中考试开始了，大家都想取得好成绩，争夺前五名。从键盘输入n个学生成绩（不超过40个），输出每组排在前五高的成绩。
 int main()
-{
+{ 
+  int n = 0;//个数
+  int arr[40] = {0};//存放是成绩
+  scanf("%d",&n);
   int i = 0;
-  for(i=10000;i<=99999;i++)
+  for(i=0;i<n;i++)
   {
-    //判断i是否lily number
+    scanf("%d",&arr[i]);
+  }
+  //冒泡排序
+  for(i=0;i<n-1;i++)
+  {
     int j = 0;
-    int sum = 0;
-    for(j=10;j<=10000;j*=10)
+    for(j=0;j<n-1-i;j++)
     {
-      sum +=(i/j)*(i%j);
+      if(arr[j] > arr[j+1])
+      {
+        int tmp = arr[j];
+	arr[j] = arr[j+1];
+	arr[j+1] = tmp;
+      }
     }
-    if(sum == i)
-    {
-      printf("%d ",i);
-    }
+  }
+  for(i=n-1;i>=n-5;i--)
+  {
+    printf("%d ",arr[i]);
   }
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
