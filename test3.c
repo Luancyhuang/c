@@ -1,17 +1,31 @@
 #include <stdio.h>
-//给定一个球体的半径，计算其体积。
-//其中体积公式为v = 4/3πr^3
-//其中π=3.1415926
+
+//网购（11.11/12.12）
 int main()
 {
-  //1.输入
-  double r = 0.0;//定义半径
-  scanf("%lf",&r);
-  double v = 0.0;//定义体积
-  double pi = 3.1415926;
-  //2.计算
-  v = 4.0/3*pi*r*r*r;
-  //3.输出
-  printf("%.3lf\n",v);
+  int month = 0;
+  int day = 0;
+  double price = 0.0;
+  double cut = 1.0;
+  int flag = 0;
+  double last = 0.0;
+  scanf("%d %d %lf %d",&month,&day,&price,&flag);
+  if(month == 11 && day == 11)
+  {
+    cut = 0.7;  
+  }
+  else if(month == 12 && day == 12)
+  {
+    cut = 0.8;
+  }
+  last = price*cut - flag*50;
+  if(last<0.0)
+  {
+    printf("%.2lf\n",0.0);
+  }
+  else
+  {
+    printf("%.2lf\n",last);
+  }
   return 0;
 }
