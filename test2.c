@@ -1,16 +1,20 @@
 #include <stdio.h>
-#include <math.h>
-//计算三角形的周长和面积
+// kiki喝酸奶
 int main()
 {
-  double a = 0.0;
-  double b = 0.0;
-  double c = 0.0;
-  scanf("%lf %lf %lf",&a,&b,&c);
-  double girth = a + b + c;
-  double p = girth/2;
-  //海伦公式计算三角形的面积
-  double area = sqrt(p*(p-a)*(p-b)*(p-c));
-  printf("%.2lf %.2lf\n",girth,area);
+  int n = 0;
+  int h = 0;
+  int m = 0;
+  while(scanf("%d %d %d",&n,&h,&m) != EOF)
+  {
+    if(m%h)
+    {
+      printf("%d\n",n-m/h-1);
+    }
+    else
+    {
+      printf("%d\n",n-m/h);
+    }
+  }
   return 0;
 }
