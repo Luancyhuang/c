@@ -1,17 +1,38 @@
 #include <stdio.h>
-//给定秒数seconds（0<seconds<100,000,000)，把秒转换成小时、分钟和秒。
-//3661 
-//1 1 1
+//假设你们社团竞选社长，有两名候选人分别是A和B,社团每名同学必须并且只能投一票，最终得票最多的人为社长。
 int main()
 {
-  int seconds = 0;
-  int h = 0;
-  int m = 0;
-  int s = 0;
-  scanf("%d",&seconds);
-  h = seconds/60/60;
-  m = seconds/60%60;
-  s = seconds%60;
-  printf("h = %d,m = %d,s = %d\n",h,m,s);
+  char buf[100] = {0};
+  //输入
+  gets(buf);
+  //统计
+  int count_a = 0;
+  int count_b = 0;
+  int i = 0;
+  while(buf[i]!='0')
+  {
+    if(buf[i]=='A')
+    {
+      count_a++;
+    }
+    if(buf[i]=='B')
+    {
+      count_b++; 
+    }
+    i++;
+  }
+  if(count_a>count_b)
+  {
+    printf("A\n");
+  }
+  else if(count_a<count_b)
+  {
+    printf("B\n");
+  }
+  else
+  {
+    printf("E\n");
+  }
+  //输出
   return 0;
 }
