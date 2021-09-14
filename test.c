@@ -6,33 +6,22 @@ int main()
   //输入
   gets(buf);
   //统计
-  int count_a = 0;
-  int count_b = 0;
+  int flag = 0;
   int i = 0;
   while(buf[i]!='0')
   {
     if(buf[i]=='A')
-    {
-      count_a++;
-    }
+      flag++;
     if(buf[i]=='B')
-    {
-      count_b++; 
-    }
+      flag--; 
     i++;
   }
-  if(count_a>count_b)
-  {
+  if(flag>0)
     printf("A\n");
-  }
-  else if(count_a<count_b)
-  {
+  else if(flag<0)
     printf("B\n");
-  }
   else
-  {
     printf("E\n");
-  }
   //输出
   return 0;
 }
