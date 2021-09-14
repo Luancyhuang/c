@@ -1,31 +1,46 @@
 #include <stdio.h>
 
-//网购（11.11/12.12）
+//int main()
+//{
+//  int score[3] = {0};
+//  while(~scanf("%d%d%d",&score[0],&score[1],&score[2]))
+//  {
+//    int i = 0;
+//    int max = score[0];
+//    for(i=0;i<3;i++)
+//    {
+//      if(max<score[i])
+//      {
+//        max = score[i];
+//      }
+//    }
+//    printf("%d\n",max); 
+//  }
+//  return 0;
+//}
+//
+//判断一个字母是否为元音字母
 int main()
 {
-  int month = 0;
-  int day = 0;
-  double price = 0.0;
-  double cut = 1.0;
-  int flag = 0;
-  double last = 0.0;
-  scanf("%d %d %lf %d",&month,&day,&price,&flag);
-  if(month == 11 && day == 11)
+  int ch = 0;
+  char vowel[] = "AaEeIiOoUu";
+  while((ch = getchar())!= EOF)
   {
-    cut = 0.7;  
-  }
-  else if(month == 12 && day == 12)
-  {
-    cut = 0.8;
-  }
-  last = price*cut - flag*50;
-  if(last<0.0)
-  {
-    printf("%.2lf\n",0.0);
-  }
-  else
-  {
-    printf("%.2lf\n",last);
+    //判断是否为元音字母
+    int i = 0;
+    for(i=0;i<10;i++)
+    {
+      if(ch == vowel[i])
+      {
+        printf("vowel\n");
+	break;
+      }
+    }
+    if(i==10)
+    {
+      printf("consonant\n");   
+    }
+    getchar();
   }
   return 0;
 }
