@@ -1,42 +1,39 @@
 #include <stdio.h>
-//据说智商超过140以上都称之为天才，kiki想知道自己是不是天才，请帮他编程判断。输入一个整数表示一个人的智商，如果大于等于140，则表明他是一个天才，输出‘Genius
-//int main()
-//{
-//  int iq = 0;
-//  //while(scanf("%d",&iq) != EOF)
-//  while(~scanf("%d",&iq))
-//  {
-//    if(iq>=140)
-//      printf("Genius\n");
-//  }
-//  return 0;
-//}
-//
-//int main()
-//{
-//  int score = 0;
-//  while(~scanf("%d",&score))
-//  {
-//    if(score>=90&&score<=100)
-//    {
-//      printf("perfect!\n",score);
-//    }
-//  }
-//  return 0;
-//}
-
-//三科成绩比较大小
+#include <math.h>
+//计算一元二次方程
 int main()
 {
-  int chinese = 0;
-  int math = 0;
-  int english = 0;
-  while(~scanf("%d%d%d",&chinese,&math,&english))
+  double a = 0.0;
+  double b = 0.0;
+  double c = 0.0;
+  while(~scanf("%lf %lf %lf",&a,&b,&c))
   {
-    int max = chinese>math?chinese:math;
-    max = max>english?max:english;    
-    printf("%d\n",max);
+    if(a==0)
+    {
+      printf("不是一元二次方程\n");
+    }
+    else
+    {
+      double disc = b*b-4*a*c;
+      if(disc==0)
+      {
+        //有两个相同的实根
+	printf("x1=x2=%.2lf\n",-b/(2*a));
+      }
+      else if(disc>0)
+      {
+        //有两个不相同的实根
+	printf("x1=%.2lf;x2=%.2lf\n",(-b-sqrt(disc))/(2*a),
+			             (-b+sqrt(disc))/(2*a));
+      }
+      else 
+      {
+        //有两个虚根
+	double real = -b/(2*a);//实部
+	double image = sqrt(-disc)/(2*a);//虚部
+        printf("x1=%.2lf-%.2lfi;x2=%.2lf+%.2lfi\n",real,image,real,image);
+      }    
+    }  
   }
   return 0;
 }
-
