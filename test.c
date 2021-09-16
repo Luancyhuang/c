@@ -1,40 +1,58 @@
 #include <stdio.h>
-//简单计算器
+//正方形
+//int main()
+//{
+//  int n = 0;
+//  int i = 0;
+//  while(~scanf("%d",&n))
+//  {
+//    for(i=0;i<n;i++)
+//    {
+//      int j = 0;
+//      for(j=0;j<n;j++)
+//      {
+//        printf("* ");
+//      }
+//      printf("\n");
+//    }
+//  }
+//  return 0;
+//}
+//三角形
+//int main()
+//{
+//  int n = 0;
+//  int i = 0;
+//  while(~scanf("%d",&n))
+//  {
+//    for(i=0;i<n;i++)
+//    {
+//      int j = 0;
+//      for(j=0;j<=i;j++)
+//      {
+//        printf("* ");
+//      }
+//      printf("\n");
+//    }  
+//  }
+//  return 0;
+//} 
+//倒置三角形
 int main()
 {
-  double n1 = 0.0;
-  double n2 = 0.0;
-  char op = 0;
-  while(~scanf("%lf%c%lf",&n1,&op,&n2))
+  int n = 0;
+  while(~scanf("%d",&n))
   {
-    switch(op)
+    int i = 0;
+    for(i=0;i<n;i++)
     {
-      case '+':
-        printf("%.4lf+%.4lf=%.4lf\n",n1,n2,n1+n2);
-        break;
-      case '-':
-        printf("%.4lf-%.4lf=%.4lf\n",n1,n2,n1-n2);
-        break;
-      case '*':
-        printf("%.4lf*%.4lf=%.4lf\n",n1,n2,n1*n2);
-        break;
-      case '/':
-        if(n2==0.0)
-        {
-          printf("被除数不能为能'0'\n");
-        }
-        else
-        {	
-          printf("%.4lf/%.4lf=%.4lf\n",n1,n2,n1/n2);
-        }
-        break;
-      default:
-        printf("非法输入\n");
-        break;
-    }
-  
-  
+      int j = 0;
+      for(j=0;j<n-i;j++)
+      {
+        printf("* ");      
+      }
+      printf("\n");
+    }  
   }
-
   return 0;
 }
