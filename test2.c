@@ -1,39 +1,37 @@
 #include <stdio.h>
-#include <math.h>
-//计算一元二次方程
+//箭型图
 int main()
 {
-  double a = 0.0;
-  double b = 0.0;
-  double c = 0.0;
-  while(~scanf("%lf %lf %lf",&a,&b,&c))
+  int n = 0;
+  while(~scanf("%d",&n))
   {
-    if(a==0)
+    int i = 0;
+    for(i=0;i<n;i++)
     {
-      printf("不是一元二次方程\n");
+      int j = 0;
+      for(j=0;j<n-i;j++)
+      {
+        printf("  ");
+      }
+      for(j=0;j<=i;j++)
+      {
+        printf("*");
+      }
+      printf("\n");
     }
-    else
+    for(i=0;i<n+1;i++)
     {
-      double disc = b*b-4*a*c;
-      if(disc==0)
+      int j = 0;
+      for(j=0;j<i;j++)
       {
-        //有两个相同的实根
-	printf("x1=x2=%.2lf\n",-b/(2*a));
+        printf("  ");
       }
-      else if(disc>0)
+      for(j=0;j<n+1-i;j++)
       {
-        //有两个不相同的实根
-	printf("x1=%.2lf;x2=%.2lf\n",(-b-sqrt(disc))/(2*a),
-			             (-b+sqrt(disc))/(2*a));
+        printf("*");
       }
-      else 
-      {
-        //有两个虚根
-	double real = -b/(2*a);//实部
-	double image = sqrt(-disc)/(2*a);//虚部
-        printf("x1=%.2lf-%.2lfi;x2=%.2lf+%.2lfi\n",real,image,real,image);
-      }    
-    }  
+      printf("\n");
+    }
   }
   return 0;
 }
