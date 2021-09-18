@@ -1,32 +1,49 @@
 #include <stdio.h>
-//期中考试开始了，大家都想取得好成绩，争夺前五名。从键盘输入n个学生成绩（不超过40个），输出每组排在前五高的成绩。
+//求五个人的身高平均值
+//int main()
+//{
+//  int i = 0;
+//  float hi = 0.0;
+//  float sum = 0.0;
+//  for(i=0;i<5;i++)
+//  {
+//    scanf("%f",&hi);
+//    sum += hi;
+//  }
+//  printf("%.2f\n",sum/5.0);
+//  return 0;
+//}
+//
 int main()
-{ 
-  int n = 0;//个数
-  int arr[40] = {0};//存放是成绩
-  scanf("%d",&n);
-  int i = 0;
-  for(i=0;i<n;i++)
+{
+  int state = 0;
+  while(~scanf("%d",&state))
   {
-    scanf("%d",&arr[i]);
-  }
-  //冒泡排序
-  for(i=0;i<n-1;i++)
-  {
-    int j = 0;
-    for(j=0;j<n-1-i;j++)
+    switch(state)
     {
-      if(arr[j] > arr[j+1])
-      {
-        int tmp = arr[j];
-	arr[j] = arr[j+1];
-	arr[j+1] = tmp;
-      }
-    }
-  }
-  for(i=n-1;i>=n-5;i--)
-  {
-    printf("%d ",arr[i]);
+      case 200:
+          printf("OK\n");
+          break;
+      case 202:
+	  printf("Accepted\n");
+          break;
+      case 400:
+	  printf("Bad Request\n");
+          break;
+      case 403:
+	  printf("Forbidden\n");
+          break;
+      case 404:
+	  printf("Not Found\n");
+          break;
+      case 500:
+	  printf("Internal server Error\n");
+          break;
+      case 502:
+	  printf("Bad Gateway\n");
+          break;
+    }  
   }
   return 0;
 }
+
