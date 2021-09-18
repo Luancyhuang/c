@@ -1,46 +1,28 @@
 #include <stdio.h>
-
-//int main()
-//{
-//  int score[3] = {0};
-//  while(~scanf("%d%d%d",&score[0],&score[1],&score[2]))
-//  {
-//    int i = 0;
-//    int max = score[0];
-//    for(i=0;i<3;i++)
-//    {
-//      if(max<score[i])
-//      {
-//        max = score[i];
-//      }
-//    }
-//    printf("%d\n",max); 
-//  }
-//  return 0;
-//}
-//
-//判断一个字母是否为元音字母
+//空心三角形
 int main()
 {
-  int ch = 0;
-  char vowel[] = "AaEeIiOoUu";
-  while((ch = getchar())!= EOF)
+  int n = 0;
+  while(~scanf("%d",&n))
   {
-    //判断是否为元音字母
     int i = 0;
-    for(i=0;i<10;i++)
+    for(i=0;i<n;i++)
     {
-      if(ch == vowel[i])
+      int j = 0;
+      for(j=0;j<n;j++)
       {
-        printf("vowel\n");
-	break;
+        if(i==n-1||j==0||i==j)
+	{
+	  printf("* ");
+	}
+	else
+	{
+	  printf("  ");
+	}
       }
+      printf("\n");    
     }
-    if(i==10)
-    {
-      printf("consonant\n");   
-    }
-    getchar();
   }
   return 0;
 }
+
