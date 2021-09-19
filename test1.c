@@ -1,31 +1,18 @@
 #include <stdio.h>
-//‘x'型图形打印
+#include <string.h>
+//用户登录网站，通常需要注册，一半需要输入两遍密码，请编程判断输入的两次密码是否一致，一致输出"same"，不一致输出"different"。
 int main()
 {
-  int n = 0;
-  while(~scanf("%d",&n))
+  char password1[100] = {0};
+  char password2[100] = {0};
+  scanf("%s %s",&password1,&password2);
+  if(strcmp(password1,password2) == 0)
   {
-    int i = 0;
-    for(i=0;i<n;i++)
-    {
-      int j = 0;
-      for(j=0;j<n;j++)
-      {
-        if(i==j)
-	{
-	  printf("*");
-	}
-	else if(i+j==n-1)
-	{
-	  printf("*");
-	}
-	else 
-	{
-	  printf(" ");
-	}
-      }
-      printf("\n");
-    }
+    printf("same\n");  
+  }
+  else
+  {
+    printf("different\n");  
   }
   return 0;
 }
