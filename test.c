@@ -1,44 +1,52 @@
 #include <stdio.h>
-//任意输入一个正整数N，统计1～N之间奇数的个数和偶数的个数，并输出。
+//输入n个成绩，换行输出n个成绩中最高分数和最低分数的差
 //int main()
 //{
 //  int n = 0;
 //  scanf("%d",&n);
-//  int odd = 0;
 //  int i = 0;
-//  for(i=1;i<=n;i++)
+//  int score = 0;
+//  int max = 0;
+//  int min = 100;
+//  for(i=0;i<n;i++)
 //  {
-//    if(i%2 == 1)
+//    scanf("%d",&score);
+//    if(score>max)
 //    {
-//      odd++;    
-//    }  
+//      max = score;
+//    }
+//    if(score<min)
+//    {
+//      min = score;
+//    }
 //  }
-//  printf("%d %d\n",odd,n-odd);
+//  printf("%d\n",max-min);  
 //  return 0;
 //}
-//输入n科成绩（浮点数表示），统计其中的最高分，最低分以及平均分。
+//
+//有序序列的判断
 int main()
 {
   int n = 0;
+  int arr[50] = {0};
   scanf("%d",&n);
+  int flag1 = 0;
+  int flag2 = 0;
   int i = 0;
-  float score = 0.0;
-  float sum = 0.0;
-  float max = 0.0;//假设最高分
-  float min = 100.0;//假设最低分
   for(i=0;i<n;i++)
   {
-    scanf("%f",&score);
-    sum += score;
-    if(max<score)
+    scanf("%d",&arr[i]);
+    if(i>0)
     {
-      max = score;
-    }
-    if(min>score)
-    {
-      min = score;
+      if(arr[i] > arr[i-1])
+        flag1 = 1;   
+      else
+        flag2 = 1;
     }
   }
-  printf("%.2f %.2f %.2f",sum,max,min);
+  if(flag1+flag2==1)
+    printf("sorted\n");
+  else
+    printf("unsorted\n");
   return 0;
 }
