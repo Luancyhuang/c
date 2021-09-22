@@ -1,48 +1,51 @@
 #include <stdio.h>
-//求五个人的身高平均值
-//int main()
-//{
-//  int i = 0;
-//  float hi = 0.0;
-//  float sum = 0.0;
-//  for(i=0;i<5;i++)
-//  {
-//    scanf("%f",&hi);
-//    sum += hi;
-//  }
-//  printf("%.2f\n",sum/5.0);
-//  return 0;
-//}
-//
+//井字棋
 int main()
 {
-  int state = 0;
-  while(~scanf("%d",&state))
+  char arr[3][3] = {0};
+  int i = 0;
+  int j = 0;
+  for(i=0;i<3;i++)
   {
-    switch(state)
+    for(j=0;j<3;j++)
     {
-      case 200:
-          printf("OK\n");
-          break;
-      case 202:
-	  printf("Accepted\n");
-          break;
-      case 400:
-	  printf("Bad Request\n");
-          break;
-      case 403:
-	  printf("Forbidden\n");
-          break;
-      case 404:
-	  printf("Not Found\n");
-          break;
-      case 500:
-	  printf("Internal server Error\n");
-          break;
-      case 502:
-	  printf("Bad Gateway\n");
-          break;
+      scanf(" %c",arr[i][j]);
+    }
+  }
+  //判断输赢
+  char flag = 'o';
+  for(i=0;i<3;i++)
+  {
+    if(arr[i][0]==arr[i][1] && arr[i][1] == arr[i][2] && arr[i][0] != 'o')
+    {
+      flag = arr[i][1];
+      break;    
     }  
+    if(arr[0][i]==arr[1][i] && arr[1][i] == arr[2][i] && arr[1][0] != 'o')
+    {
+      flag = arr[1][i];
+      break;    
+    }  
+  }
+  if(arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2] && arr[0][0] != 'o')
+  {
+    flag = arr[0][0];
+  }
+  if(arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0] && arr[0][2] != 'o')
+  {
+    flag = arr[0][2];
+  }
+  if(flag == 'k')
+  {
+    printf("kiki wins!\n");
+  }
+  else if(flag == 'b')	  
+  {
+    printf("bobo wins!\n");
+  }
+  else 
+  {
+    printf("no winers!\n");
   }
   return 0;
 }
