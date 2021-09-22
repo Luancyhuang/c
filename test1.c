@@ -22,28 +22,62 @@
 //}
 //
 //矩阵元素定位
+//int main()
+//{
+//  int n = 0;
+//  int m = 0;
+//  scanf("%d %d",&n,&m);
+//  //接受n行m列数组
+//  int arr[10][10] = {0};
+//  int i = 0;
+//  int j = 0;
+//  for(i=0;i<n;i++)
+//  {
+//    for(j=0;j<m;j++)
+//    {
+//      scanf("%d",&arr[i][j]);    
+//    }  
+//  }
+//  int x = 0;
+//  int y = 0;
+//  scanf("%d %d",&x,&y);
+//  printf("%d\n",arr[x-1][y-1]);
+//  return 0;
+//}
+//序列重组矩阵
 int main()
 {
   int n = 0;
   int m = 0;
-  scanf("%d %d",&n,&m);
-  //接受n行m列数组
   int arr[10][10] = {0};
+  scanf("%d %d",&n,&m);
   int i = 0;
   int j = 0;
   for(i=0;i<n;i++)
   {
     for(j=0;j<m;j++)
     {
-      scanf("%d",&arr[i][j]);    
+      scanf("%d",&arr[i][j]);
     }  
   }
-  int x = 0;
-  int y = 0;
-  scanf("%d %d",&x,&y);
-  printf("%d\n",arr[x-1][y-1]);
+  for(i<0;i<n;i++)
+  {
+    for(j=0;j<m;j++)
+    {
+      printf("%d ",arr[i][j]);
+    }
+    printf("\n");
+  }
   return 0;
 }
+
+
+
+
+
+
+
+
 
 
 
