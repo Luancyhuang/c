@@ -1,13 +1,28 @@
 #include <stdio.h>
-//小乐乐比较懒惰，他现在在睡懒觉，然后再去学习，他知道现在的时刻，以及自己要睡的时长，想设定一个闹钟叫他起床学习，但是他太笨了，不知道应该把闹钟设定在哪个时刻，请你帮助他，（只考虑时和分，不考虑日期）。
+//求两个数最大公约数和最小公倍数之和
 int main()
 {
-  int h = 0;
+  int n = 0;
   int m = 0;
-  int k = 0;
-  scanf("%d:%d %d",&h,&m,&k);
-  h=((m+k)/60+h)%24;
-  m=(m+k)%60;
-  printf("%02d:%02d\n",h,m);  
+  scanf("%d %d",&n,&m);
+  int max = n>m?m:n;//假设n和m较小的数为最大公约数
+  int min = n>m?n:m;//同上，较大数为最小公倍数
+  while(1)
+  {
+    if(n%max==0 && m%max==0)
+    {
+      break;    
+    }
+    max--;  
+  }
+  while(1)
+  {
+    if(min%n == 0 && min%m == 0)
+    {
+      break;       
+    }
+    min++;
+  }
+  printf("%d\n",max+min);
   return 0;
 }
