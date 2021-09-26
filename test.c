@@ -1,28 +1,22 @@
 #include <stdio.h>
-//求两个数最大公约数和最小公倍数之和
+//辗转相除法求解两个数的最大公约数和最小公倍数。
 int main()
 {
-  int n = 0;
-  int m = 0;
-  scanf("%d %d",&n,&m);
-  int max = n>m?m:n;//假设n和m较小的数为最大公约数
-  int min = n>m?n:m;//同上，较大数为最小公倍数
-  while(1)
+  long long n1 = 0;
+  long long m1 = 0;
+  scanf("%lld %lld",&n1,&m1);
+  long long n2 = n1;
+  long long m2 = m1;
+  long long max = 0;
+  long long min = 0;
+  long long tmp = 0;
+  while(tmp=n1%m1)
   {
-    if(n%max==0 && m%max==0)
-    {
-      break;    
-    }
-    max--;  
+    n1=m1;
+    m1=tmp;  
   }
-  while(1)
-  {
-    if(min%n == 0 && min%m == 0)
-    {
-      break;       
-    }
-    min++;
-  }
-  printf("%d\n",max+min);
+  max = m1;
+  min = n2*m2/max;
+  printf("%lld\n",max+min);
   return 0;
 }
