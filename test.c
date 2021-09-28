@@ -1,46 +1,47 @@
 #include <stdio.h>
-//老师给小乐乐一个正整数序列，要求小乐乐把这个序列去重后按从小到大排序。但是老师给出的序列太长了，小乐乐没办法耐心的去重并排序，请你帮助他。
-//int main()
-//{
-//  int n = 0;
-//  int arr[10001]={0};
-//  scanf("%d",&n);
-//  int i = 0;
-//  int tmp = 0;
-//  for(i=0;i<n;i++)
-//  {
-//    scanf("%d",&tmp);
-//    arr[tmp] = tmp;   
-//  }
-//  for(i=0;i<n;i++)
-//  {
-//    if(arr[i]!=0)
-//    {
-//      printf("%d ",arr[i]);    
-//    }  
-//  }
-//  return 0;
-//}
-//
-//在庆祝祖国母亲70华诞之际，老师给小乐乐出了一个问题，大家都知道china的英文缩写是CHN ，那么给你一个字符串s，你需要做的是统计S中字串“CHN”的个数。
+//给定一个整数序列，KiKi想把其中的重复的整数去掉，并将去重后的序列从小到大排序输出。
 int main()
-{ 
-  char str[5000] = {0};
-  scanf("%s",&str);
-  int c = 0;
-  int ch = 0;
-  int chn = 0;
-  char *p = str;
-  while(*p)
+{
+  int n = 0;
+  int arr[1000] = {0};
+  scanf("%d",&n);
+  int i = 0;
+  for(i=0;i<n;i++)
   {
-    if(*p=='c')
-      c++;
-    else if(*p=='h')
-      ch += 'c';
-    else if(*p=='n')
-      chn += ch;
-    p++;
+    scanf("%d",&arr[i]);  
   }
-  printf("%d\n",chn);
+  for(i=0;i<n-1;i++)
+  {
+    int j = 0;
+    for(j=0;j<n-1-i;j++)
+    {
+      if(arr[j]>arr[j+1])
+      {
+        int tmp = arr[j];
+	arr[j] = arr[j+1];
+	arr[j+1] = tmp;
+      }
+    }  
+  }//冒泡排序的方法
+  //去重
+  for(i=0;i<n-1;i++)
+  {
+    if(arr[i] == arr[i+1])
+    {
+      //把i+1下标往后的元素全部往前覆盖
+      int j = 0;
+      for(j=i;j<n-1;j++)
+      {
+        arr[j] = arr[j+1];      
+      }
+      n--;
+      i--;
+    } 
+  }
+  for(i=0;i<n;i++)
+  {
+    printf("%d ",arr[i]);  
+  }
+  printf("\n");
   return 0;
 }
