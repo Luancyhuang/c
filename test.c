@@ -1,47 +1,81 @@
 #include <stdio.h>
-//给定一个整数序列，KiKi想把其中的重复的整数去掉，并将去重后的序列从小到大排序输出。
+//#include <stdbool.h>
+//int main()
+//{
+//  bool x = true;
+//  if(x)
+//  {
+//    printf("hehe\n");
+//  }
+//  else 
+//  {
+//    printf("haha\n");
+//  }
+//  int a = 0;
+//  printf("%d\n",a);
+//  return 0;  
+//}
+//int main()
+//{
+//  int day = 0;
+//  int quit = 0;
+//  while(!quit)
+//  {
+//    printf("请输入日期");
+//    scanf("%d",&day);
+//    switch(day)
+//    {
+//      case 1:
+//	      printf("周一\n");
+//	      break;
+//      case 2:
+//	      printf("周二\n");
+//	      break;
+//      case 3:
+//	      printf("周三\n");
+//	      break;
+//      case 4:
+//	      printf("周四\n");
+//	      break;
+//      case 5:
+//	      printf("周五\n");
+//	      break;
+//      case 6:
+//	      printf("周六\n");
+//	      quit = 1;
+//	      break;
+//      case 7:
+//	      printf("周末\n");
+//	      break;
+//      default:
+//	      printf("你输入的有误，请重新输入\n");
+//	      break;    
+//    }  
+//  }
+//  return 0;
+//}
+//int main()
+//{
+//  int count = 10;
+//  while(count>=0)
+//  {
+//    printf("hello,world\n");
+//    count--; 
+//  }
+//  return 0;
+//}
+//
 int main()
 {
-  int n = 0;
-  int arr[1000] = {0};
-  scanf("%d",&n);
-  int i = 0;
-  for(i=0;i<n;i++)
+  while(1)
   {
-    scanf("%d",&arr[i]);  
-  }
-  for(i=0;i<n-1;i++)
-  {
-    int j = 0;
-    for(j=0;j<n-1-i;j++)
+    int ret = getchar();
+    if(ret == '#')
     {
-      if(arr[j]>arr[j+1])
-      {
-        int tmp = arr[j];
-	arr[j] = arr[j+1];
-	arr[j+1] = tmp;
-      }
-    }  
-  }//冒泡排序的方法
-  //去重
-  for(i=0;i<n-1;i++)
-  {
-    if(arr[i] == arr[i+1])
-    {
-      //把i+1下标往后的元素全部往前覆盖
-      int j = 0;
-      for(j=i;j<n-1;j++)
-      {
-        arr[j] = arr[j+1];      
-      }
-      n--;
-      i--;
+      break;  
     } 
+    printf("%c ",ret);      
   }
-  for(i=0;i<n;i++)
-  {
-    printf("%d ",arr[i]);  
-  }
-  printf("\n");
   return 0;
 }
+
